@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    line-height: 1;
+    background-color: #ffffff;
+    background-image: url("images/bg_image.jpg");
+    font-family: sans-serif;
+}
+h1,h3{
+    color: #c5e1e6;
+    background-color: #505152;
+    font-family: Lucida Sans Unicode, Helvetica, Arial, sans-serif;
+}
+h1{
+    text-align: center;
+}
+.intro{
+    text-align: center;
+    font-style: italic;
+}
+.emphasize{
+    font-weight: bold;
+}
+.sleek{
+    font-style: italic;
+    font-family: "Times New Roman", sans-serif;
+    color: #941103;
+    text-decoration: -moz-mac-accentdarkestshadow;
+}
+#myName{
+    font-style: normal;
+    color: #941103;
+}
+footer{
+    text-align: right;
+    background-color: #ffffff;
+}
+p.intro::first-letter{
+    font-size: 150%;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
