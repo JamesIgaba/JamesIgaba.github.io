@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 11pt;
+    font-family: Georgia, Garamond, sans-serif;
+    line-height: 1;
+    background-color: #ffffff;
+    color: #404040;
+}
+h1, h2{
+    color: #A4A400;
+    background-color: #F0F0F0;
+    font-family: Lucida Sans Unicode, Helvetica, Arial, sans-serif;
+    text-decoration: underline;
+    font-size: 18pt;
+    font-weight: normal;
+}
+h1{
+    font-weight: bold;
+    font-size: 22pt;
+    text-align: center;
+}
+a{
+    color: #A4A400;
+}
+footer{
+    text-align: right;
+}
+.preformatted{
+    font-family: monospace;
+    white-space: pre;
+    line-height: normal;
+}
+.deletedWord{
+    text-decoration: line-through;
+}
+.emphasized{
+    font-weight: bold;
+}
+.comments{
+    font-style: italic;
+    background-color: #FFFFA8;
+    margin-left: 5%;
+    margin-right: 5%;
+}
