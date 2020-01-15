@@ -6,6 +6,7 @@ body{
     line-height: 1;
     background-color: #ffffff;
     color: #404040;
+    background-image: url("recipeImages/silverware.jpg");
 }
 h1, h2{
     color: #A4A400;
