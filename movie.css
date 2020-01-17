@@ -20,10 +20,9 @@ h1{
     border: 4px solid gray;
     border-radius: 20px;
     overflow: hidden;
-/* make contents fit not yet implemented */
-}
-.reviews{
-    float: left;
+    display: grid;
+    grid-template-areas: 'rotten rotten general_overview'
+                        'reviews reviews general_overview';
 }
 #rotten{
     background-image: url("images_movie/rbg.png");
@@ -33,20 +32,21 @@ h1{
     font-weight: bold;
     color: red;
     font-size: 48pt;
+    grid-area: rotten;
 }
-#critics{
+#reviews{
     width: 550px;
     column-count: 2;
     column-gap: 2%;
-
+    grid-area: reviews;
 }
 #general_overview{
     background-color: #A2B964;
-    width: 250px;
+    /*width: 250px;*/
     padding: 10pt;
     font-size: 8pt;
     font-family: Arial, sans-serif;
-    /*float: right;*/
+    grid-area: general_overview;
 }
 .quote{
     font-size: 8pt;
