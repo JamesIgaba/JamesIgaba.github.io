@@ -1,10 +1,10 @@
 <!-- James Igaba 610569
 Comments:
 I started working on this lab on w1d3. My major challenge was working with float to achieve the expected output.
-After we covered grid layouts, it became a lot easier to accomplish.
-Up until this point, I have managed to create and arrange the major components of the page. I'm left with adding
-appropriate padding and margins as well as putting together a few details at the bottom of the page.
--->
+After we covered grid layouts in class, it became a lot easier to accomplish.
+I used the responsive design lab to practice using the grid layout and after I mastered it, this assignment
+became a piece of cake.
+In total, it took me about 4 hours to complete this assignment.-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +22,10 @@ appropriate padding and margins as well as putting together a few details at the
 
 <div id="page_wrapper">
 
+    <div id="go_img">
+        <img src="images_movie/overview.png" alt="general overview" />
+    </div>
     <div id="general_overview">
-        <div>
-            <img src="images_movie/overview.png" alt="general overview" />
-        </div>
-
         <dl>
             <dt>STARRING</dt>
             <dd>Patrick Stewart <br /> Mako <br /> Sarah Michelle Gellar <br /> Kevin Smith</dd>
@@ -208,14 +207,16 @@ appropriate padding and margins as well as putting together a few details at the
         </div>
 
     </div>
-
-    <p>(1-10) of 88</p>
+    <div id="page_bottom">
+        <p>(1-10) of 88</p>
+    </div>
 
 </div>
-
-<div>
-    <a href="https://validator.w3.org/check/referer"><img src="images_movie/w3c-html.png" alt="Valid HTML5" /></a> <br />
-    <a href="https://jigsaw.w3.org/css-validator/check/referer"><img src="images_movie/w3c-css.png" alt="Valid CSS" /></a>
-</div>
+<footer>
+    <div>
+        <a href="https://validator.w3.org/check/referer"><img src="images_movie/w3c-html.png" alt="Valid HTML5" /></a> <br />
+        <a href="https://jigsaw.w3.org/css-validator/check/referer"><img src="images_movie/w3c-css.png" alt="Valid CSS" /></a>
+    </div>
+</footer>
 </body>
 </html>
