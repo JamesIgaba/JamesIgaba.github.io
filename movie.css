@@ -43,9 +43,8 @@ h1{
     width: 550px;
     column-count: 2;
     column-gap: 2%;
-    margin-top: 20pt;
     grid-area: reviews;
-    display: inline-block;
+    /*display: inline-block;*/
 }
 #general_overview{
     background-color: #A2B964;
