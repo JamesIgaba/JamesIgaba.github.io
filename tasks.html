@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<!--James Igaba 610569
+Comment:
+This assignment was quite easy. The major take away from it was valuable experience
+in styling using bootstrap. I spent about one and a half hours doing this assignment.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8"></meta>
+  <title>Task list</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="tasks.css" media="screen"/>
+</head>
+
+<body>
+<div id="menu">
+  <a href="../index.html">Home</a>
+</div>
+
+<header>
+  <span>Task list</span>
+</header>
+
+<main>
+  <section>
+    <form>
+      <div>
+        <label for="task">Task</label>
+        <input id="task" type="text" required="required" name="task" class="large" placeholder="Breakfast at Tiffanys" />
+      </div>
+
+      <div>
+        <label for="requiredBy">Required by</label>
+        <input id="requiredBy" type="date" required="required" name="requiredBy" />
+      </div>
+
+      <div>
+        <label for="category">Category</label>
+        <select name="category" id="category">
+          <option value="Personal">Personal</option>
+          <option value="Work">Work</option>
+        </select>
+      </div>
+
+      <nav>
+        <a href="#">Save task</a>
+        <a href="#">Clear task</a>
+      </nav>
+    </form>
+  </section>
+
+  <section>
+    <table id="table-task">
+      <colgroup>
+        <col width="50%"></col>
+        <col width="25%"></col>
+        <col width="25%"></col>
+      </colgroup>
+
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Due</th>
+        <th>Category</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <td>Return library books</td>
+        <td>
+          <time datetime="2013-10-14">2013-10-14</time>
+        </td>
+        <td>Personal</td>
+      </tr>
+      <tr class="even">
+        <td>
+          Perform project demo to stakeholders
+        </td>
+        <td>
+          <time datetime="2013-10-14">2013-10-14</time>
+        </td>
+        <td>Work</td>
+      </tr>
+
+      <tr>
+        <td>Meet friends for dinner</td>
+        <td>
+          <time datetime="2013-10-14">2013-10-14</time>
+        </td>
+        <td>Personal</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <nav>
+      <a href="#">Add task</a>
+    </nav>
+  </section>
+</main>
+
+<footer>You have 3 tasks</footer>
+</body>
+</html>
