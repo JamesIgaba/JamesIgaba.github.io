@@ -1,0 +1,42 @@
+<!--James Igaba 610569
+Comments:
+This lab looked simple but turned out to be quite a challenge towards the end. The main challenge I faced was
+writing the 'Pig Latin' conditional statements especially for the part of ' words starting with a cluster of consonants'.
+Other than that, the rest of the lab was great practice for basic JavaScript.
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Text Decorator</title>
+		<link href="decoratemytext.css" type="text/css" rel="stylesheet" />
+
+		<!--
+		This is a widely-used JavaScript library named jQuery that has
+		many useful functions which we need.
+		Please don't remove this link or change its URL; leave it as-is!
+		-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+
+		<!-- link to your script file here -->
+		<script src="decoratemytext.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<h1>Text Decorator</h1>
+		
+		<div>
+			<img src="decorated.gif" alt="very decorated!" />
+		</div>
+
+		<!-- Your UI controls go here -->
+		<div>
+			<textarea rows="4" cols="30" id="text_here"></textarea>
+		</div>
+		<div>
+			<button onclick="f3()">Bigger Decorations!</button>
+			<button onclick="f4()">Igpay Atinlay</button>
+			<button onclick="f5()">Malkovitch</button><br>
+			<input type="checkbox" id="check_here" onchange="f2()">Bling<br>
+		</div>
+	</body>
+</html>
