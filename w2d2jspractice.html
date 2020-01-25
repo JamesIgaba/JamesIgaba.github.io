@@ -1,0 +1,46 @@
+<!-- Comments:
+ This lab was quite very helpful. It took me about 6 hours to complete. I learnt
+ quite a number of concepts in JavaScipt which contradicted the programming knowledge
+ I had from Java.
+ I learnt how to clone arrays efficiently in JavaScript using [...array]
+ I learnt how the list data structure works in JavaScript
+ I learnt how to test for object equality in JavaScript. Not just references but also
+ checking the object's properties
+ ...and many more concepts.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- add mocha css, to show results -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <!-- add mocha framework code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script>
+        mocha.setup('bdd'); // minimal setup
+    </script>
+    <!-- add chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+        // chai has a lot of stuff, let's make assert global
+        let assert = chai.assert;
+    </script>
+</head>
+
+<body>
+
+<script src="w2d2jsPractice.js">    </script>
+
+<!-- the script with tests (describe, it...) -->
+<!-- <script src="test.js"></script>
+<script src="calculatorTest.js"></script> -->
+
+<!-- the element with id="mocha" will contain test results -->
+<div id="mocha"></div>
+
+<!-- run tests! -->
+<script>
+    mocha.run();
+</script>
+</body>
+</html>
