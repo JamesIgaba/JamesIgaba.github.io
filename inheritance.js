@@ -200,6 +200,11 @@ Function.prototype.defer2 = function (ms) {
 };
 
 // check it
+/**
+ *
+ * @param a
+ * @param b
+ */
 function multiply(a, b) {
     console.log(a * b);
 }
