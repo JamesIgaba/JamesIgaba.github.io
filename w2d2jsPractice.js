@@ -3,98 +3,280 @@
 (function () {
     "use strict";
 
-    function reverseArray( array ) {
-        const cloneArray = [...array];
-        let reversedArray = [];
-        let i;
-        while( i = cloneArray.pop() )
-            reversedArray.push( i );
-        return reversedArray;
-    }
-
-    function reverseArrayInPlace( array ) {
-        for( let i = 0; i < Math.floor( array.length/2 ); i++ ) {
-            let temp = array[i];
-            array[i] = array[array.length - 1 - i];
-            array[array.length - 1 - i] = temp;
+    /**
+     *
+     * @param arr
+     * @returns {[]}
+     */
+    function reverseArray(arr) {
+        let newArray = [];
+        for (let i = 0; i < arr.length; i++) {
+            newArray[i] = arr[arr.length - i - 1];
         }
+        return newArray;
     }
 
-    const arr1 = ["A", "B", "C"];
-    console.log(reverseArray(arr1));
-    console.log(arr1);
-// → ["C", "B", "A"];
-    let arrayValue = [1, 2, 3, 4, 5];
-    reverseArrayInPlace(arrayValue);
-    console.log(arrayValue);
-// → [5, 4, 3, 2, 1]
+    /**
+     *
+     * @param arr
+     * @returns {*}
+     */
+    function reverseArrayInPlace(arr) {
+        for (let i = 0; i < arr.length / 2; i++) {
+            let tmp = arr[i];
+            arr[i] = arr[arr.length - i - 1];
+            arr[arr.length - i - 1] = tmp;
+        }
+        return arr;
+
+    }
+
+    /**
+     *
+     */
+    Array.prototype.reverseArray = function () {
+        let i = 0;
+        let middle = Math.floor(this.length / 2);
+        let temp = null;
+
+        for (let i = 0; i < middle; i += 1) {
+            temp = this[i];
+            this[i] = this[n - 1 - i];
+            this[n - 1 - i] = temp;
+        }
+    };
+
+    describe("reverse", function () {
+        it("reverseArray(Z,Y,X) returns XYZ", function () {
+            assert.equal(reverseArray(["Z","Y","X"]).toString(), ["X","Y","Z"]);
+        });
+
+        it("reverseArrayInPlace(Z,Y,X) returns XYZ", function () {
+            assert.equal(reverseArrayInPlace(["Z","Y","X"]).toString(), ["X","Y","Z"]);
+        });
+
+    });
 
 
-    function arrayToList(array) {
-        let result = {};
-        if (Array.isArray(array)) {
-            let currListItem = result;
-            for (let item of array) {
-                let newListItem = {
-                    value: item,
-                    rest: null
+    /**
+     *
+     * @param number
+     * @param list
+     * @returns {{}}
+     */
+    function prepend(number, list) {
+        let obj = {};
+        obj.value = number;
+        obj.rest = list;
+        return obj;
+    }
+
+    console.log(prepend(100, prepend(50, null)).value);
+
+    describe("prepend", function () {
+        it("prepend(10, prepend(20, null))", function () {
+            assert.equal(prepend(100, prepend(50, null)).value, 100);
+        });
+
+    });
+
+    /**
+     *
+     * @param arr
+     * @returns {{rest: null}}
+     */
+
+    function arrayToList(arr) {
+        let retVal = {
+            rest : null
+        };
+
+        for (let i = 0; i < arr.length; i++) {
+
+            if (retVal.rest === null) { // if its first element in list
+                retVal.value = arr[i]; // dynamically adding value attribute to
+                // retVal object
+                retVal.rest = {
+
+                    rest : null
                 };
-                if (typeof currListItem.rest === 'undefined') {
-                    result = newListItem;
-                } else {
-                    currListItem.rest = newListItem;
+            } else {
+                let counter = retVal;
+                while (counter.rest !== null) {
+                    counter = counter.rest;
                 }
-                currListItem = newListItem;
+                counter.value = arr[i];
+                counter.rest = {
+
+                    rest : null
+                };
+
             }
+
         }
-        return result;
-    }
+
+        return retVal;
+    };
+    console.log();
+
+    /**
+     *
+     * @param list
+     * @returns {[]}
+     */
 
     function listToArray(list) {
-        let result = [];
-        if (typeof list === 'undefined' || list.value === undefined || list.rest === undefined) {
-            return result;
-        } else {
-            result.push(list.value);
-            while (list.hasOwnProperty('rest') && list.rest !== null) {
-                list = list.rest;
-                if (list.hasOwnProperty('value')) {
-                    result.push(list.value);
+
+        let arr = [];
+
+        while (list !== null) {
+            if (list.value !== undefined)
+                arr.push(list.value);
+            list = list.rest;
+        }
+
+        return arr;
+
+    }
+
+
+    describe("array -> List", function () {
+        it("arrayToList([ 1, 2, 3 ]", function () {
+            assert.equal(arrayToList([ 1, 2, 3 ]).toString(),"[object Object]")
+        })
+
+        it("listToArray({\n" +
+            "        value : 1,\n" +
+            "        rest : {\n" +
+            "          value : 2,\n" +
+            "          rest : {\n" +
+            "            value : 3,\n" +
+            "            rest : null\n" +
+            "          }\n" +
+            "        }\n" +
+            "\n" +
+            "      } -> 123", function () {
+            assert.equal(listToArray({
+                value : 1,
+                rest : {
+                    value : 2,
+                    rest : {
+                        value : 3,
+                        rest : null
+                    }
                 }
+
+            }).toString(),"1,2,3")
+        })
+
+    });
+
+    /**
+     *
+     * @param list
+     * @param index
+     * @returns {null|*}
+     */
+    function nth(list, index) {
+        let i = 0;
+        while (list != null && list.value != null) {
+            if (i == index) {
+                return list.value;
+            }
+            list = list.rest;
+            i++;
+        }
+        return null;
+    }
+
+
+    /**
+     *
+     * @param list
+     * @param index
+     * @returns {*}
+     */
+    function recNth(list, index) {
+        if (index === 0) {
+            return list.value;
+        }
+        return recNth(list.rest, --index);
+
+    }
+
+    console.log(recNth({
+        value: 1,
+        rest: {
+            value: 2,
+            rest: {
+                value: 3,
+                rest: null
             }
         }
-        return result;
-    }
 
-    function prepend(element, list) {
-        return {
-            value: element,
-            rest: list
-        };
-    }
-
-    function nth(list, number) {
-        return listToArray(list)[number];
-    }
-
-    function nthRecursive(list, number) {
-        if (number === 0) {
-            return list.value;
-        } else if (list.rest === null) {
-            return undefined;
-        } else {
-            return nthRecursive(list.rest, number-1);
+    }, 0));
+    console.log(nth({
+        value: 1,
+        rest: {
+            value: 2,
+            rest: {
+                value: 3,
+                rest: null
+            }
         }
-    }
 
-    console.log(arrayToList([10, 20]));
-// → {value: 10, rest: {value: 20, rest: null}}
-    console.log(listToArray(arrayToList([10, 20, 30])));
-// → [10, 20, 30]
-    console.log(prepend(10, prepend(20, null)));
-// → {value: 10, rest: {value: 20, rest: null}}
-    console.log(nth(arrayToList([10, 20, 30]), 1));
-// → 20
+    }), 0);
+
+    describe("nth", function () {
+        it("nth({\n" +
+            "    value: 1,\n" +
+            "    rest: {\n" +
+            "      value: 2,\n" +
+            "      rest: {\n" +
+            "        value: 3,\n" +
+            "        rest: null\n" +
+            "      }\n" +
+            "    }\n" +
+            "\n" +
+            "  }, 0) -> 1", function () {
+            assert.equal(nth({
+                value: 1,
+                rest: {
+                    value: 2,
+                    rest: {
+                        value: 3,
+                        rest: null
+                    }
+                }
+
+            },0), 1)
+        })
+
+        it("recNth({\n" +
+            "    value: 1,\n" +
+            "    rest: {\n" +
+            "      value: 2,\n" +
+            "      rest: {\n" +
+            "        value: 3,\n" +
+            "        rest: null\n" +
+            "      }\n" +
+            "    }\n" +
+            "\n" +
+            "  }, 0) -> 1", function () {
+            assert.equal(recNth({
+                value: 1,
+                rest: {
+                    value: 2,
+                    rest: {
+                        value: 3,
+                        rest: null
+                    }
+                }
+
+            }, 0),1)
+        })
+
+    });
 
     /**
      * Compares two objects for equal values in all properties and recursively for any objects that are property values
@@ -135,16 +317,13 @@
     const y = x;
     console.log(deepEqual(x, y));
 
-
-
-
-    context("test cases from assignment" , function () {
+    context("testing deepEqual" , function () {
         let longWords;
         beforeEach(function () {
             let obj = {here: {is: "an"}, object: 2};
         });
 
-        describe("testing deepEqual", function () {
+        describe("", function () {
             it("object equal to itself", function () {
                 assert.isTrue(deepEqual(obj, obj));
             });
