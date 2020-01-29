@@ -17,7 +17,7 @@ $(function () {
         }
     })
 
-    $('div#start').on('mouseenter',()=>{
+    $('div#start').on('click',()=>{
         $('div.boundary').removeClass('youlose');
         $('h2#status').html('Click the "S" to begin');
         boundaryTouched = false;
