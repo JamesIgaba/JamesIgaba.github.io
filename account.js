@@ -2,13 +2,13 @@
 
 /**
  * A Bank Account class
- * 
+ *
  * Provides the basic functionality that every account should have
  */
 class Account {
     /**
      * Constructor for creating a new Account object
-     * 
+     *
      * @param {number} number the number for this account
      */
     constructor(number) {
@@ -18,7 +18,7 @@ class Account {
 
     /**
      * Getter for the 'private' number field
-     * 
+     *
      * @returns {number} the account number
      */
     getNumber() {
@@ -27,7 +27,7 @@ class Account {
 
     /**
      * Accessor for the 'private' balance field
-     * 
+     *
      * @returns {number} balance for this account
      */
     getBalance() {
@@ -36,8 +36,8 @@ class Account {
 
     /**
      * Method to add money into the account
-     * 
-     * @param {number} amount money to be deposited into the account 
+     *
+     * @param {number} amount money to be deposited into the account
      * @returns {undefined}
      * @throws {RangeError} when amount is less than or equal to zero
      */
@@ -50,7 +50,7 @@ class Account {
 
     /**
      * Method to take money out of the account
-     * 
+     *
      * @param {number} amount money to be taken out of the account
      * @returns {undefined}
      * @throws {RangeError} when amount is less than or equal to zero
@@ -64,6 +64,10 @@ class Account {
             throw Error("Insufficient funds");
         }
         this._balance -= amount;
+    }
+
+    endofMonth() {
+        return "";
     }
 
     /**
