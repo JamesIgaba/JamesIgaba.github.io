@@ -1,0 +1,37 @@
+<!--Comments:
+This lab was good practice for working with jQuery. In total, I spent about 4 hours on this lab.
+The main challenge I faced was in changing the size of the circles. It wasn't working as I expected.
+I later logged the new size to the console and found out that concatenation was being performed
+instead of addition. This was solved when I used parseInt to change the value to a string.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Circle Lab</title>
+    <link href="circle.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="circle.js" type="text/javascript"></script>
+</head>
+<body>
+<p>
+    <label for="circle_width">Width:</label><br>
+    <input type="number" min="0" id="circle_width">
+</p>
+<p>
+    <label for="growth_amount">Growth Amount:</label><br>
+    <input type="number" min="0" id="growth_amount">
+</p>
+<p>
+    <label for="growth_rate">Growth Rate:</label><br>
+    <input type="number" min="0" id="growth_rate">
+</p>
+<p>
+    <label for="no_of_circles">Number of Circles:</label><br>
+    <input type="number" min="0" id="no_of_circles">
+</p>
+<button id="start_btn" type="button">Start!</button>
+<div id="ground_zero">
+
+</div>
+</body>
+</html>
